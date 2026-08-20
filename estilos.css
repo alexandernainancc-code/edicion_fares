@@ -1,0 +1,323 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+    background-color: #2c2f38;
+    color: #fff;
+    padding: 18px 30px;
+}
+
+.navbar h1 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.navbar .menu {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    font-size: 14px;
+}
+
+.navbar .menu li a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.navbar .menu li a:hover,
+.navbar .menu li a.activo {
+    opacity: 1;
+    text-decoration: underline;
+}
+
+/* ===== Contenedor principal ===== */
+.contenedor {
+    display: flex;
+    gap: 25px;
+    padding: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* ===== Panel del formulario ===== */
+.panel-formulario {
+    background-color: #fff;
+    flex: 1;
+    min-width: 320px;
+    max-width: 400px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+.panel-formulario .titulo,
+.panel-tabla .titulo {
+    background-color: #2c2f38;
+    color: #fff;
+    padding: 14px 20px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.panel-formulario form {
+    padding: 20px;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.campo input {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 14px;
+}
+
+.campo input:focus {
+    outline: none;
+    border-color: #2c2f38;
+}
+
+.campo input[readonly] {
+    background-color: #f0f0f0;
+    color: #555;
+}
+
+.fila-doble {
+    display: flex;
+    gap: 15px;
+}
+
+.fila-doble .campo {
+    flex: 1;
+}
+
+.btn-guardar {
+    background-color: #2c2f38;
+    color: #fff;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-guardar:hover {
+    background-color: #40465a;
+}
+
+/* ===== Panel de la tabla ===== */
+.panel-tabla {
+    background-color: #fff;
+    flex: 2;
+    min-width: 500px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead tr {
+    background-color: #2c2f38;
+    color: #fff;
+}
+
+thead th {
+    text-align: left;
+    padding: 12px 15px;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+tbody td {
+    padding: 12px 15px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+tbody tr:hover {
+    background-color: #f7f7f7;
+}
+
+.acciones {
+    display: flex;
+    gap: 6px;
+}
+
+.btn-accion {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.btn-editar {
+    background-color: #3ba55d;
+}
+
+.btn-editar:hover {
+    background-color: #2f8a4b;
+}
+
+.btn-eliminar {
+    background-color: #d9534f;
+}
+
+.btn-eliminar:hover {
+    background-color: #c9302c;
+}
+
+/* ===== Paginación ===== */
+.paginacion {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    padding: 18px;
+    flex-wrap: wrap;
+}
+
+.paginacion a,
+.paginacion span {
+    min-width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2c2f38;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 0 6px;
+}
+
+.paginacion a:hover {
+    background-color: #40465a;
+}
+
+.paginacion .activa {
+    background-color: #3ba55d;
+}
+
+.sin-registros {
+    padding: 20px;
+    text-align: center;
+    color: #888;
+}
+
+/* ===== Imagen de producto en la tabla ===== */
+.img-producto {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid #ddd;
+    background-color: #f2f2f2;
+}
+
+.img-producto.sin-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaa;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* ===== Apartado de Stock ===== */
+.badge-stock {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    color: #fff;
+    min-width: 34px;
+    text-align: center;
+}
+
+.badge-stock.alto  { background-color: #3ba55d; }
+.badge-stock.medio { background-color: #e0a800; }
+.badge-stock.bajo  { background-color: #d9534f; }
+
+.form-stock {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.form-stock select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.form-stock input[type="number"] {
+    width: 80px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.btn-stock {
+    background-color: #2c2f38;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.btn-stock:hover {
+    background-color: #40465a;
+}
+
+.mensaje {
+    padding: 12px 20px;
+    margin: 20px 30px 0;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.mensaje.exito {
+    background-color: #dff5e4;
+    color: #226c3d;
+    border: 1px solid #b7e6c4;
+}
+
+.mensaje.error {
+    background-color: #fbe4e3;
+    color: #a12a26;
+    border: 1px solid #f2b8b6;
+}
